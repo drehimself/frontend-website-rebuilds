@@ -122,10 +122,11 @@ function startCycle() {
         <div
           @mouseover="setCurrent('vue')"
           @mouseout="startCycle()"
-          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out"
           :class="{
             'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
               current === 'vue',
+            'opacity-50': current !== 'vue',
           }"
         >
           <img src="/logos/vue.svg" class="w-1/2" alt="vue" />
@@ -139,10 +140,11 @@ function startCycle() {
         <div
           @mouseover="setCurrent('alpine')"
           @mouseout="startCycle()"
-          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl opacity-50"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out"
           :class="{
-            'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100 transition duration-500 ease-in-out':
+            'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
               current === 'alpine',
+            'opacity-50': current !== 'alpine',
           }"
         >
           <img src="/logos/alpine.svg" class="w-1/2" alt="alpine" />
@@ -186,10 +188,11 @@ function startCycle() {
         <div
           @mouseover="setCurrent('nuxt')"
           @mouseout="startCycle()"
-          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out"
           :class="{
             'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
               current === 'nuxt',
+            'opacity-50': current !== 'nuxt',
           }"
         >
           <img src="/logos/nuxt.svg" class="w-1/2" alt="nuxt" />
@@ -206,10 +209,11 @@ function startCycle() {
         <div
           @mouseover="setCurrent('svelte')"
           @mouseout="startCycle()"
-          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out"
           :class="{
             'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
               current === 'svelte',
+            'opacity-50': current !== 'svelte',
           }"
         >
           <img src="/logos/svelte.svg" class="w-1/2" alt="svelte" />
@@ -223,10 +227,11 @@ function startCycle() {
         <div
           @mouseover="setCurrent('next')"
           @mouseout="startCycle()"
-          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out"
           :class="{
             'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
               current === 'next',
+            'opacity-50': current !== 'next',
           }"
         >
           <img src="/logos/next.svg" class="w-1/2" alt="next" />
@@ -240,10 +245,11 @@ function startCycle() {
         <div
           @mouseover="setCurrent('react')"
           @mouseout="startCycle()"
-          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out"
           :class="{
             'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
               current === 'react',
+            'opacity-50': current !== 'react',
           }"
         >
           <img src="/logos/react.svg" class="w-1/2" alt="react" />
