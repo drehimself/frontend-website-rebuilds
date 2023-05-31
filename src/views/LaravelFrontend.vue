@@ -1,5 +1,47 @@
 <script setup>
 import { MagnifyingGlassIcon, Bars3Icon } from '@heroicons/vue/24/outline'
+import { ref } from 'vue'
+
+const current = ref(null)
+const currentText = ref('Big Idea')
+
+const frameworks = {
+  vue: 'Vue App',
+  react: 'React App',
+  nuxt: 'Nuxt.js App',
+  next: 'Next.js App',
+  alpine: 'Alpine.js App',
+  svelte: 'Svelte App',
+}
+
+function setCurrent(framework) {
+  clearInterval(timer)
+  current.value = framework
+  currentText.value = frameworks[framework]
+}
+
+function setCurrentNoReset(framework) {
+  current.value = framework
+  currentText.value = frameworks[framework]
+}
+
+let timer = null
+
+startCycle()
+
+function startCycle() {
+  timer = setInterval(() => {
+    const keys = Object.keys(frameworks)
+
+    let currentIndex =
+      current.value === null
+        ? 0
+        : keys.findIndex(framework => framework === current.value)
+
+    const nextIndex = currentIndex + 1 < keys.length ? currentIndex + 1 : 0
+    setCurrentNoReset(keys[nextIndex])
+  }, 3000)
+}
 </script>
 
 <template>
@@ -35,11 +77,12 @@ import { MagnifyingGlassIcon, Bars3Icon } from '@heroicons/vue/24/outline'
         </div>
       </nav>
     </header>
+
     <div class="hero flex justify-center items-center overflow-hidden">
-      <div class="container mx-auto pt-32 pb-56">
+      <div class="absolute mt-32 mb-56 z-50">
         <h2 class="text-center text-7xl font-bold">
           <span>The Powerhouse Behind</span> <br />
-          <span class="text-red-500">Your Big Idea</span>
+          <span class="text-red-500">Your {{ currentText }}</span>
         </h2>
         <p
           class="max-w-2xl mx-auto text-center leading-relaxed text-lg text-gray-500 mt-8"
@@ -63,6 +106,157 @@ import { MagnifyingGlassIcon, Bars3Icon } from '@heroicons/vue/24/outline'
             Watch Laracasts
           </a>
         </div>
+      </div>
+
+      <!-- <div class="grid grid-cols-8"> -->
+      <div
+        class="grid grid-cols-8"
+        style="transform: scale(125%) rotateX(60deg) rotateZ(45deg)"
+      >
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          @mouseover="setCurrent('vue')"
+          @mouseout="startCycle()"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          :class="{
+            'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
+              current === 'vue',
+          }"
+        >
+          <img src="/logos/vue.svg" class="w-1/2" alt="vue" />
+        </div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          @mouseover="setCurrent('alpine')"
+          @mouseout="startCycle()"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl opacity-50"
+          :class="{
+            'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100 transition duration-500 ease-in-out':
+              current === 'alpine',
+          }"
+        >
+          <img src="/logos/alpine.svg" class="w-1/2" alt="alpine" />
+        </div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          @mouseover="setCurrent('nuxt')"
+          @mouseout="startCycle()"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          :class="{
+            'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
+              current === 'nuxt',
+          }"
+        >
+          <img src="/logos/nuxt.svg" class="w-1/2" alt="nuxt" />
+        </div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          @mouseover="setCurrent('svelte')"
+          @mouseout="startCycle()"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          :class="{
+            'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
+              current === 'svelte',
+          }"
+        >
+          <img src="/logos/svelte.svg" class="w-1/2" alt="svelte" />
+        </div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          @mouseover="setCurrent('next')"
+          @mouseout="startCycle()"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          :class="{
+            'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
+              current === 'next',
+          }"
+        >
+          <img src="/logos/next.svg" class="w-1/2" alt="next" />
+        </div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          @mouseover="setCurrent('react')"
+          @mouseout="startCycle()"
+          class="bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl transition duration-500 ease-in-out opacity-50"
+          :class="{
+            'shadow-[64px_64px_100px_-20px_theme(colors.red.400)] -translate-x-4 -translate-y-4 opacity-100':
+              current === 'react',
+          }"
+        >
+          <img src="/logos/react.svg" class="w-1/2" alt="react" />
+        </div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
+        <div
+          class="invisible bg-white shadow-2xl flex justify-center items-center aspect-square rounded-xl"
+        ></div>
       </div>
     </div>
     <div class="next-section bg-gray-100">
