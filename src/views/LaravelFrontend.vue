@@ -80,7 +80,7 @@ function startCycle() {
 
     <div class="hero flex justify-center items-center overflow-hidden">
       <div class="absolute mt-32 mb-56 z-50">
-        <h2 class="text-center text-7xl font-bold">
+        <h2 class="text-center text-4xl lg:text-7xl font-bold">
           <span>The Powerhouse Behind</span> <br />
           <span class="text-red-500">Your {{ currentText }}</span>
         </h2>
@@ -110,7 +110,7 @@ function startCycle() {
 
       <!-- <div class="grid grid-cols-8"> -->
       <div
-        class="grid grid-cols-8"
+        class="grid grid-cols-8 h-[500px] lg:h-max"
         style="transform: scale(125%) rotateX(60deg) rotateZ(45deg)"
       >
         <div
