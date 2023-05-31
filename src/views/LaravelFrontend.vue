@@ -78,33 +78,35 @@ function startCycle() {
       </nav>
     </header>
 
-    <div class="hero flex justify-center items-center overflow-hidden">
-      <div class="absolute mt-32 mb-56 z-50">
-        <h2 class="text-center text-4xl lg:text-7xl font-bold">
-          <span>The Powerhouse Behind</span> <br />
-          <span class="text-red-500">Your {{ currentText }}</span>
-        </h2>
-        <p
-          class="max-w-2xl mx-auto text-center leading-relaxed text-lg text-gray-500 mt-8"
-        >
-          Laravel is an intensely productive full-stack web framework. Pair
-          Laravel and its rich ecosystem with Livewire, React, or Vue to build
-          your next big idea and ship faster than you ever thought possible.
-        </p>
-        <div
-          class="mx-auto max-w-2xl flex justify-center items-center space-x-4 mt-10"
-        >
-          <a
-            href="#"
-            class="bg-red-500 text-white uppercase font-semibold px-4 py-2"
-            >Get Started</a
+    <div class="hero overflow-hidden">
+      <div class="flex justify-center">
+        <div class="absolute mt-20 lg:mt-52 z-50">
+          <h2 class="text-center text-4xl lg:text-7xl font-bold">
+            <span>The Powerhouse Behind</span> <br />
+            <span class="text-red-500">Your {{ currentText }}</span>
+          </h2>
+          <p
+            class="max-w-2xl mx-auto text-center leading-relaxed text-lg text-gray-500 mt-8"
           >
-          <a
-            href="#"
-            class="border border-red-500 text-red-500 uppercase font-semibold px-4 py-2"
+            Laravel is an intensely productive full-stack web framework. Pair
+            Laravel and its rich ecosystem with Livewire, React, or Vue to build
+            your next big idea and ship faster than you ever thought possible.
+          </p>
+          <div
+            class="mx-auto max-w-2xl flex justify-center items-center space-x-4 mt-10"
           >
-            Watch Laracasts
-          </a>
+            <a
+              href="#"
+              class="bg-red-500 text-white uppercase font-semibold px-4 py-2"
+              >Get Started</a
+            >
+            <a
+              href="#"
+              class="border border-red-500 text-red-500 uppercase font-semibold px-4 py-2"
+            >
+              Watch Laracasts
+            </a>
+          </div>
         </div>
       </div>
 
